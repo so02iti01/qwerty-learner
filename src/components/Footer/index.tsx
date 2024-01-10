@@ -93,85 +93,10 @@ const Footer: React.FC = () => {
         <br />
       </InfoPanel>
 
-      <InfoPanel
-        openState={infoPanelState.community}
-        title="用户反馈社群"
-        icon={IconWechat}
-        buttonClassName="bg-green-500 hover:bg-green-400"
-        iconClassName="text-green-500 bg-green-100 dark:text-green-300 dark:bg-green-500"
-        onClose={() => handleCloseInfoPanel('community')}
-      >
-        <p className="text-sm text-gray-500 dark:text-gray-400">
-          Qwerty Learner 是一个开源项目，旨在为用户提供高质量、可靠的打字练习工具。
-          <br />
-          加入我们的用户社群后，您可以与我们的开发团队进行沟通，分享您的使用体验和建议，帮助我们改进产品，同时也能够及时了解我们的最新动态和更新内容。
-          <br />
-          <br />
-        </p>
-        <p className="text-sm text-gray-700 dark:text-gray-200">
-          我们深信，与用户的良好互动和反馈是推动我们不断前进和提高的重要因素。因此，我们诚挚邀请您加入我们的社群，与我们一起打造更好的
-          「Qwerty Learner」！
-        </p>
-        <br />
-        <p className="text-sm text-gray-500  dark:text-gray-400">再次感谢您的支持和关注！</p>
-        <br />
-        <img className="ml-1 w-2/6 " src="https://qwerty.kaiyi.cool/weChat-group.jpg" alt="weChat-group" />
-        <br />
-      </InfoPanel>
-
-      <InfoPanel
-        openState={infoPanelState.redBook}
-        title="小红书社群"
-        icon={IconXiaoHongShu}
-        buttonClassName="bg-red-500 hover:bg-red-400"
-        iconClassName="text-red-500 bg-red-100 dark:text-red-600 dark:bg-red-500"
-        onClose={() => handleCloseInfoPanel('redBook')}
-      >
-        <p className="text-sm text-gray-500  dark:text-gray-400">
-          Qwerty Learner 是一个开源项目，旨在为用户提供高质量、可靠的打字练习工具。
-          <br />
-          关注小红书后，您可以获得开发团队的最新动态和更新内容，反馈您的使用体验和建议，帮助我们改进产品。
-          <br />
-          <br />
-        </p>
-        <p className="text-sm text-gray-700 dark:text-gray-200">
-          我们深信，与用户的良好互动和反馈是推动我们不断前进和提高的重要因素。因此，我们诚挚邀请您关注我们的小红书账号，与我们一起打造更好的
-          「Qwerty Learner」！
-        </p>
-        <br />
-        <img className="ml-1 w-5/12 " src={redBookCode} alt="redBook" />
-        <p className="text-sm text-gray-500 dark:text-gray-400">Tips: 从小红书“我”的左上角点击 三 找到 扫一扫</p>
-        <br />
-      </InfoPanel>
-
       <footer className="mb-1 mt-4 flex w-full items-center justify-center gap-2.5 text-sm ease-in" onClick={(e) => e.currentTarget.blur()}>
         <a href="https://github.com/Kaiyiwing/qwerty-learner" target="_blank" rel="noreferrer" aria-label="前往 GitHub 项目主页">
           <IconGithub fontSize={15} className="text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-100" />
         </a>
-
-        <button
-          className="cursor-pointer"
-          type="button"
-          onClick={(e) => {
-            handleOpenInfoPanel('redBook')
-            e.currentTarget.blur()
-          }}
-          aria-label="加入我们的小红书社群"
-        >
-          <IconXiaoHongShu fontSize={14} className="text-gray-500 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-500" />
-        </button>
-
-        <button
-          className="cursor-pointer focus:outline-none"
-          type="button"
-          onClick={(e) => {
-            handleOpenInfoPanel('community')
-            e.currentTarget.blur()
-          }}
-          aria-label="加入我们的微信用户群"
-        >
-          <IconWechat2 fontSize={16} className="text-gray-500 hover:text-green-500 dark:text-gray-400 dark:hover:text-green-500" />
-        </button>
 
         <a href="https://twitter.com/real_kai42" target="_blank" title="x" rel="noreferrer">
           <IconTwitter fontSize={16} className="text-gray-500 hover:text-[#1DA1F2] dark:text-gray-400 dark:hover:text-[#1DA1F2]" />
@@ -210,12 +135,6 @@ const Footer: React.FC = () => {
           <IconMail fontSize={16} className="text-gray-500 hover:text-indigo-400 dark:text-gray-400 dark:hover:text-indigo-400" />
         </a>
 
-        <Tooltip content="中国大陆镜像">
-          <a href="https://kaiyiwing.gitee.io/qwerty-learner" target="_self" title="前往中国大陆镜像">
-            <IconFlagChina fontSize={16} />
-          </a>
-        </Tooltip>
-
         <button
           className="cursor-pointer text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
           type="button"
@@ -227,14 +146,6 @@ const Footer: React.FC = () => {
           @ Qwerty Learner
         </button>
 
-        <a
-          className="cursor-pointer text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-          href="https://beian.miit.gov.cn"
-          target="_blank"
-          rel="noreferrer"
-        >
-          鲁ICP备2022030649号
-        </a>
         <span className="select-none rounded bg-slate-200 px-1 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-400">
           Build <span className="select-all">{LATEST_COMMIT_HASH}</span>
         </span>
